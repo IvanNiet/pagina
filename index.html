@@ -3,9 +3,13 @@
     <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
 
+    <!-- CodeMirror -->
     <script src="codemirror/lib/codemirror.js"></script>
     <link rel="stylesheet" href="codemirror/lib/codemirror.css">
     <script src="codemirror/mode/python/python.js"></script>
+
+    <!-- Pyodide -->
+    <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
 </head>
 <body>
     <main>
@@ -60,8 +64,8 @@
             </div>
             <div id="codigo">
                 <h4>Código</h4>
-                    <textarea id="codigo1">
-# Obtención de datos
+                <script src="codedit.js"></script>
+                <textarea id="yourcode"># Obtención de datos
 
 import requests
 import pandas as pd
@@ -69,11 +73,12 @@ import pandas as pd
 for i in range(10000):
     print("Pandas!")
 
-    ...
-
-</textarea>
+    ...</textarea>
+                <form>
+                    <button type="button" onclick="runit()">Ejecutar</button>
+                </form>
                 <script>
-                    var editor = CodeMirror.fromTextArea(document.getElementById("codigo1"), {
+                    var editor = CodeMirror.fromTextArea(document.getElementById("yourcode"), {
                         mode: {name: "python",
                             version: 3,
                             singleLineStringErrors: false},
