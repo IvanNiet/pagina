@@ -36,6 +36,16 @@ h4 {
     font-size: 18px;
 }
 
+#ejecutar-codigo {
+    margin: 10px 0px 10px 0px;
+    background-color: forestgreen;
+    border-radius: 2px;
+    font-size: 20px;
+    border: 0px;
+    width: 100px;
+    height: 40px;
+}
+
 /*
 Esto es solamente mientras usamos esta plataforma,
 probablemente lo terminemos quitando.
