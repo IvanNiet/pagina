@@ -65,20 +65,19 @@
             <div id="codigo">
                 <h4>Código</h4>
                 <script src="codedit.js"></script>
-                <textarea id="yourcode"># Obtención de datos
+                <textarea id="code"># Obtención de datos
 
-import requests
 import pandas as pd
 
-for i in range(10000):
+for i in range(100):
     print("Pandas!")
 
     ...</textarea>
                 <form>
-                    <button type="button" onclick="runit()">Ejecutar</button>
+                    <button type="button" onclick="run()">Ejecutar</button>
                 </form>
                 <script>
-                    var editor = CodeMirror.fromTextArea(document.getElementById("yourcode"), {
+                    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                         mode: {name: "python",
                             version: 3,
                             singleLineStringErrors: false},
