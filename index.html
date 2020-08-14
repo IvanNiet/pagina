@@ -10,6 +10,7 @@
 
     <!-- Pyodide -->
     <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+    <script src="codedit.js"></script>
 </head>
 <body>
     <main>
@@ -64,29 +65,27 @@
             </div>
             <div id="codigo">
                 <h4>Código</h4>
-                <script src="codedit.js"></script>
-                <textarea id="code"># Obtención de datos
+                <div id="espacio-de-codigo" style="visibility: hidden;">
+                    <textarea id="code">
+import matplotlib.pyplot as plt
+import io, base64
 
-import pandas as pd
+fig, ax = plt.subplots()
+ax.plot([1,3,2])
 
-for i in range(100):
-    print("Pandas!")
+buf = io.BytesIO()
+fig.savefig(buf, format='png')
+buf.seek(0)
+img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')
 
-    ...</textarea>
+</textarea>
                 <form>
-                    <button type="button" onclick="run()">Ejecutar</button>
+                        <button type="button" id="ejecutar-codigo" onclick="run()">Ejecutar</button>
                 </form>
-                <script>
-                    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                        mode: {name: "python",
-                            version: 3,
-                            singleLineStringErrors: false},
-                        lineNumbers: true,
-                        indentUnit: 4,
-                        matchBrackets: true
-                    });
-                    editor.setSize(null, "25em");
-                </script>
+                    <div style="text-align: center; margin: 50px 0px 50px 0px;">
+                        <img id="grafica" src="#" style="visibility: hidden;">
+                    </div>
+                </div>
             </div>
             <div id="resultados">
                 <h4>Resultados</h4>

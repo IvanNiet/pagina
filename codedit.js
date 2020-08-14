@@ -14,7 +14,7 @@ languagePluginLoader.then(() => {
         });
         editor.setSize(null, "20em");
 
-        document.getElementById('ejecutar-codigo').disabled = false;
+        document.getElementById('espacio-de-codigo').style.visibility = 'visible';
     });
 });
 
@@ -23,5 +23,10 @@ function run() {
     var code = editor.doc.getValue();
     pyodide.runPython(code);
 
-    document.getElementById('grafica').src=pyodide.globals.img_str;
+    grafica = document.getElementById('grafica');
+
+    grafica.style.visibility = 'visible';
+    grafica.src=pyodide.globals.img_str;
+
+    grafica.scrollIntoView(false);
 }
