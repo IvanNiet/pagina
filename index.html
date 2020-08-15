@@ -66,8 +66,20 @@
             <div id="codigo">
                 <h4 id="h4-codigo">Código<p>Cargando, esto puede tardar unos minutos...</p></h4>
                 <div id="espacio-de-codigo" style="visibility: hidden;">
-                    <textarea id="code"></textarea>
-                    <script src="setcode.js"></script>
+                    <script>resetCode();</script>
+                    </form>
+                    <!-- <div id="consola">
+                        <div id="consola-barra">
+                            <div id="consola-barra-titulo">
+                                    <span>salida</span>
+                            </div>
+                            <div id="consola-contenido">
+                                <div id="consola-contenido-contenedor">
+                                    <div id="salida"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                     <form>
                         <button type="button" id="ejecutar-codigo" onclick="run()" style="display: inline-block;">Ejecutar</button>
                         <span id="mensaje-ejecutando" style="display: inline-block;"></span>
