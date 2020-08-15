@@ -6,9 +6,11 @@ languagePluginLoader.then(() => {
 
     pyodide.loadPackage(['pandas', 'matplotlib', 'numpy']).then(() => {
         editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: {name: "python",
+            mode: {
+                name: "python",
             version: 3,
-                singleLineStrinxgErrors: false},
+                singleLineStrinxgErrors: false
+            },
             lineNumbers: true,
             indentUnit: 4,
             matchBrackets: true
