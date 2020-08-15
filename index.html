@@ -64,9 +64,12 @@
                 </p>
             </div>
             <div id="codigo">
-                <h4 id="h4-codigo">Código<p>Cargando, esto puede tardar unos minutos...</p></h4>
-                <div id="espacio-de-codigo" style="visibility: hidden;">
-                    <script>resetCode();</script>
+                <h4 id="h4-codigo">Código</h4>
+                <div id="espacio-de-codigo">
+                    <textarea id="code" disabled="true"></textarea>
+                    <form>
+                        <button type="button" id="ejecutar-codigo" onclick="runCode()" style="display: none;">Ejecutar</button>
+                        <button type="button" id="restablecer-codigo" onclick="resetCode()" style="display: none;">Restablecer</button>
                     </form>
                     <div id="graficas"></div>
                 </div>
