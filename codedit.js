@@ -26,7 +26,6 @@ languagePluginLoader.then(() => {
 // Ejecuta el código
 function runCode() {
     pyodide.runPython(editor.doc.getValue());
-    document.getElementById('mensaje-ejecutando').innerHTML = 'Listo!';
 
     let graficas = document.getElementById('graficas');
     graficas.innerHTML = '';
