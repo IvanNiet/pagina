@@ -34,6 +34,7 @@ h4 {
 .CodeMirror {
     border: 1px solid lightgray;
     font-size: 18px;
+    resize: vertical;
 }
 
 #ejecutar-codigo {
