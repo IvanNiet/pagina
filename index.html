@@ -80,3 +80,18 @@
         </div>
     </main>
 </body>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        mode: {
+            name: "python",
+        version: 3,
+            singleLineStrinxgErrors: false
+        },
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        readOnly: true,
+    });
+    editor.setSize(null, "20em");
+</script>
+<script src="codedit.js"></script>
