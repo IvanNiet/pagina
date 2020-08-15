@@ -26,9 +26,12 @@ function run() {
     pyodide.runPython(editor.doc.getValue());
     document.getElementById('mensaje-ejecutando').innerHTML = 'Listo!';
 
-    grafica = document.getElementById('grafica');
-    grafica.style.visibility = 'visible';
-    grafica.src=pyodide.globals.img_str;
+    let graficas = document.getElementById('graficas');
+    graficas.innerHTML = '';
 
-    grafica.scrollIntoView(false);
+    for (var img in pyodide.globals.GRAFICAS) {
+        graficas.innerHTML += '<img src="' + pyodide.globals.GRAFICAS[img] + '">';
+    }
+
+    graficas.scrollIntoView();
 }
